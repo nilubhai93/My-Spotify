@@ -1,5 +1,4 @@
 console.log("Welcome to Spotify");
-
 // Initialize the Variables
 let songIndex = 0;
 let audioElement = new Audio('songs/1.mp3');
@@ -9,10 +8,9 @@ let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
-
 let songs = [
-    { songName: "Amar Bhindeshi Tara", filepath: "songs/1.mp3", coverPath: "covers/1.jpeg" },
-    { songName: "Behaya (বেহায়া)", filepath: "songs/2.mp3", coverPath: "covers/2.jpeg" },
+    { songName: "O Sajni Re ❤️", filepath: "songs/1.mp3", coverPath: "covers/1.jpeg" },
+    { songName: "Maine Jana Ishq Ki Gali", filepath: "songs/2.mp3", coverPath: "covers/2.jpg" },
     { songName: "Bojhena Shey Bojhena", filepath: "songs/3.mp3", coverPath: "covers/3.jpeg" },
     { songName: "Bolbo Kobe Kache Deke", filepath: "songs/4.mp3", coverPath: "covers/4.jpeg" },
     { songName: "Tumi Jake Bhalobasho", filepath: "songs/5.mp3", coverPath: "covers/5.jpeg" },
@@ -21,15 +19,15 @@ let songs = [
     { songName: "Chori Chori Chupke Chupke", filepath: "songs/8.mp3", coverPath: "covers/8.jpeg" },
     { songName: "Anuv_Jain_GUL ", filepath: "songs/9.mp3", coverPath: "covers/9.jpeg" },
     { songName: "Apna Bana Le  ", filepath: "songs/10.mp3", coverPath: "covers/10.jpeg" },
+    { songName: " আমার ভিনদেশী তারা ", filepath: "songs/11.mp3", coverPath: "covers/11.jpeg" },
+    { songName: "Behaya (বেহায়া)", filepath: "songs/2.mp3", coverPath: "covers/12.jpeg" },
 ]
-
 
 songItems.forEach((element, i)=>{ 
     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
 })
  
-
 // Handle play/pause click
 masterPlay.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
@@ -46,7 +44,6 @@ masterPlay.addEventListener('click', ()=>{
     }
 })
 
--
 // Listen to Events
 audioElement.addEventListener('timeupdate', ()=>{ 
     // Update Seekbar
@@ -82,7 +79,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
 })
 
 document.getElementById('next').addEventListener('click', ()=>{
-    if(songIndex>=9){
+    if(songIndex>=12){
         songIndex = 0
     }
     else{
